@@ -128,3 +128,12 @@ function blabaergris_scripts() {
     ]);
 }
 add_action('wp_enqueue_scripts', 'blabaergris_scripts');
+
+function allow_svg_uploads($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'allow_svg_uploads');
+
+remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+remove_action('wp_footer', 'wp_enqueue_global_styles', 1);

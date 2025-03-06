@@ -11,6 +11,9 @@
             </a>
         </div>
         <nav class="site-nav-container">
+            <button class="menu-toggle" aria-label="Toggle menu" onclick="this.classList.toggle('open');document.querySelector('.site-nav').classList.toggle('open')">
+                <span class="hamburger"></span>
+            </button>
             <?php
             wp_nav_menu([
                 'theme_location' => 'primary',
